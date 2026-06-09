@@ -1,0 +1,87 @@
+body{
+    margin:0;
+    background:#d8c3a5;
+    font-family:Arial;
+    color:white;
+    display:flex;
+    height:100vh;
+}
+
+#left{
+    width:35%;
+    text-align:center;
+    padding-top:20px;
+}
+
+#middle{
+    width:25%;
+    background:#7b5a44;
+    padding:15px;
+    overflow:auto;
+}
+
+#right{
+    width:40%;
+    background:#8d6e63;
+    padding:15px;
+    overflow:auto;
+}
+
+#anne{
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    border:8px solid white;
+    object-fit:cover;
+    cursor:pointer;
+    transition:0.1s;
+}
+
+#anne:active{
+    transform:scale(.95);
+}
+
+#score{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+#cps{
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.shopItem,
+.upgrade{
+    background:#5d4037;
+    border:2px solid white;
+    padding:10px;
+    margin:10px 0;
+    cursor:pointer;
+}
+
+.shopItem:hover,
+.upgrade:hover{
+    background:#795548;
+}
+
+#goldenRuler{
+    position:fixed;
+    display:none;
+    font-size:70px;
+    cursor:pointer;
+    z-index:9999;
+    animation:spin 2s linear infinite;
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+.floating{
+    position:fixed;
+    pointer-events:none;
+    font-size:30px;
+    font-weight:bold;
+}
