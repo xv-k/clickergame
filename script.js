@@ -185,7 +185,7 @@ function floating(x,y,text){
 }
 
 document
-.getElementById("anne")
+.getElementById("vcb")
 .onclick = e => {
 
     score += clickPower * multiplier;
@@ -511,7 +511,7 @@ golden.onclick = ()=>{
 setInterval(()=>{
 
     localStorage.setItem(
-        "jufAnneSave",
+        "vicyburgerSave",
 
         JSON.stringify({
 
@@ -530,7 +530,7 @@ setInterval(()=>{
 const save =
 JSON.parse(
     localStorage.getItem(
-        "jufAnneSave"
+        "vicyburgerSave"
     )
 );
 

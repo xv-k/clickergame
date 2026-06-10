@@ -27,7 +27,7 @@ body{
     overflow:auto;
 }
 
-#anne{
+#vcb{
     width:320px;
     height:320px;
     border-radius:50%;
@@ -37,7 +37,7 @@ body{
     transition:0.1s;
 }
 
-#anne:active{
+#vcb:active{
     transform:scale(.95);
 }
 
