@@ -1,4 +1,4 @@
-let version = 2;
+let version = 3;
 let score = 0;
 let totalPoints = 0;
 let clickPower = 1;
