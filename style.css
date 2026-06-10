@@ -1,6 +1,6 @@
 body{
     margin:0;
-    background:#6e5843c3;
+    background:#ba7637c3;
     font-family:Arial;
     color:rgb(255, 255, 255);
     display:flex;
@@ -31,7 +31,7 @@ body{
     width:320px;
     height:320px;
     border-radius:50%;
-    border:8px solid rgb(248, 173, 75);
+    border:8px solid rgb(255, 255, 255);
     object-fit:cover;
     cursor:pointer;
     transition:0.1s;
