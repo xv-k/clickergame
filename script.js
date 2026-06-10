@@ -591,60 +591,6 @@ if (save) {
 //     localStorage.setItem("vicyburgerSave", JSON.stringify(gameState));
 // }
 
-function resetToDefaults() {
-    score = 0;
-    totalPoints = 0;
-    clickPower = 1;
-    multiplier = 1;
-
-    for (let id in buildings) {
-        if (Object.prototype.hasOwnProperty.call(buildings, id)) {
-            buildings[id].amount = 0;
-            // Optionally reset cost to base values if you store them elsewhere
-        }
-    }
-
-    upgrades.forEach(up => up.bought = false);
-    achievements.length = 0;
-
-    renderShop();
-    renderUpgrades();
-    update();
-}
-
-function checkSaveVersion() {
-    const raw = localStorage.getItem("vicyburgerSave");
-    if (!raw) return;
-
-    let s = null;
-    try {
-        s = JSON.parse(raw);
-    } catch (e) {
-        return;
-    }
-
-    // Fetch the server's current version from version.json
-    fetch("version.json")
-        .then(res => res.json())
-        .then(data => {
-            const serverVersion = data.version;
-            if (s && s.version !== serverVersion) {
-                console.warn("Detected incompatible save version (" + s.version + "), expected server version " + serverVersion + ". Resetting save and game state.");
-                localStorage.removeItem("vicyburgerSave");
-                resetToDefaults();
-            }
-        })
-        .catch(err => console.error("Failed to fetch server version:", err));
-}
-
-// Watch for changes to the save (from other tabs or runtime changes)
-window.addEventListener("storage", (e) => {
-    if (e.key === "vicyburgerSave") checkSaveVersion();
-});
-
-// Periodically ensure a mismatched save doesn't persist while the page is open
-setInterval(checkSaveVersion, 3000);
-
 localStorage.removeItem("jufAnneSave");
 // localStorage.removeItem("vicyburgerSave");
 
