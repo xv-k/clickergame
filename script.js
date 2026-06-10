@@ -456,7 +456,7 @@ golden.onclick = ()=>{
         score += 777;
 
         alert(
-            "Lucky Meetlat!"
+            "Lucky Burger!"
         );
 
     }else if(r===1){
