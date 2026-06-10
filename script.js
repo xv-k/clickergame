@@ -5,70 +5,71 @@ let multiplier = 1;
 
 const buildings = {
 
-    meetlat:{
-        name:"📏 Meetlat",
+     kok:{
+        name:"👨‍🍳 kok",
         amount:0,
         cps:1,
         cost:15
     },
 
-    joost:{
-        name:"👨‍🏫 Meester Joost",
+    grilstation:{
+        name:"🔥 Grillstation",
         amount:0,
         cps:5,
         cost:100
     },
     
-    frans:{
-        name:"🥐 Frans ",
+    burgerkraam:{
+        name:"🏪 Burgerkraam ",
         amount:0,
         cps:10,
         cost:250
     },
-    schrift:{
-        name:"📝 Nakijkstapel",
+
+    restaurant:{
+        name:"🍔 Fastfoodrestaurant",
         amount:0,
         cps:25,
         cost:500
     },
 
-    klas:{
-        name:"🏫 Klaslokaal",
+    robot:{
+        name:"🤖 Burgerrobot",
         amount:0,
         cps:100,
         cost:3000
     },
 
-    school:{
-        name:"🎓 School",
+    fabriek:{
+        name:"🏭 Burgerfabriek",
         amount:0,
         cps:500,
         cost:10000
     },
 
-    bus:{
-        name:"🚌 Schoolreis",
+    kantoor:{
+        name:"🏢 Burger Hoofdkantoor",
         amount:0,
         cps:2500,
         cost:50000
     },
 
-    sport:{
-        name:"⚽ Sportklassen Brugge ",
+     festival:{
+        name:"🎪 Burgerfestival ",
         amount:0,
         cps:4500,
         cost:100000
     },
 
-    vrij:{
-        name:"🆓 Vrijaf",
+    wereldwijd:{
+        name:"🌍 Wereldwijde Franchise",
         amount:0,
         cps:6500,
         cost:500000
     },
 
-    middelbaar:{
-        name:"📚 Middelbaar",
+    labaratorium:{
+        name:"🧪 Burgerlaboratorium",
         amount:0,
         cps:7500,
         cost:1000000
@@ -251,7 +252,7 @@ function renderShop(){
 const upgrades = [
 
 {
-    name:"✏️ Scherpe Potloden",
+    name:"🧀 Extra Kaas",
     cost:500,
     bought:false,
     action(){
@@ -260,7 +261,7 @@ const upgrades = [
 },
 
 {
-    name:"☕ Extra Koffie",
+    name:"🥓 Krokant Spek",
     cost:2500,
     bought:false,
     action(){
@@ -269,7 +270,7 @@ const upgrades = [
 },
 
 {
-    name:" 📖 Stagiair",
+    name:"🥒 Dubbele Augurk",
     cost:5000,
     bought:false,
     action(){
@@ -379,32 +380,27 @@ setInterval(()=>{
 
     if(totalPoints >= 1)
         addAchievement(
-            "Eerste Les"
+            "Eerste burger"
         );
 
     if(totalPoints >= 1000)
         addAchievement(
-            "Krijtkampioen"
+            "een echte burger routine"
         );
 
-    if(buildings.joost.amount >= 1)
+    if(buildings.kok.amount >= 10)
         addAchievement(
-            "Meester Joost Ingehuurd"
+            "Een echte keuken"
         );
 
-    if(buildings.frans.amount >= 1)
+    if(buildings.grilstation.amount >= 1)
         addAchievement(
-            "Eerste franse les"
-        );
-    
-    if(buildings.frans.amount >= 5)
-        addAchievement(
-            "Beau travail !"
+            "Griller Ingehuurd"
         );
         
-    if(buildings.middelbaar.amount >= 1)
+    if(buildings.restaurant.amount >= 1)
         addAchievement(
-            "Laatste examens 6de leerjaar geslaagd"
+            "een echte hype aan het worden"
         );
 
 
