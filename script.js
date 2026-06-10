@@ -1,3 +1,4 @@
+let version = 2;
 let score = 0;
 let totalPoints = 0;
 let clickPower = 1;
@@ -510,7 +511,7 @@ setInterval(()=>{
         "vicyburgerSave",
 
         JSON.stringify({
-
+            version,
             score,
             totalPoints,
             clickPower,
@@ -520,47 +521,52 @@ setInterval(()=>{
 
         })
     );
-
+    
 },5000);
 
-const save =
-JSON.parse(
-    localStorage.getItem(
-        "vicyburgerSave"
-    )
-);
+const saveRaw = localStorage.getItem("vicyburgerSave");
+let save = null;
 
-if(save){
-
-    score = save.score;
-    totalPoints =
-        save.totalPoints;
-
-    clickPower =
-        save.clickPower;
-
-    Object.assign(
-        buildings,
-        save.buildings
-    );
-
-save.upgrades.forEach((savedUp, i) => {
-    upgrades[i].bought = savedUp.bought;
-});
-
+try {
+    save = JSON.parse(saveRaw);
+} catch (e) {
+    save = null;
 }
 
-function saveGame() {
-    const gameState = {
-        x: player.x,
-        y: player.y,
-        score: score
-    };
+if (save) {
+    // If the save matches the current version, restore state.
+    // If versions differ, discard the old save so outdated values aren't applied.
+    if (save.version === version) {
+        score = save.score || 0;
+        totalPoints = save.totalPoints || 0;
+        clickPower = save.clickPower || 1;
 
-    localStorage.setItem("savegame", JSON.stringify(gameState));
+        Object.assign(buildings, save.buildings || {});
+
+        if (Array.isArray(save.upgrades)) {
+            save.upgrades.forEach((savedUp, i) => {
+                if (upgrades[i]) upgrades[i].bought = !!savedUp.bought;
+            });
+        }
+    } else {
+        // Remove incompatible save to avoid confusion on next load.
+        localStorage.removeItem("vicyburgerSave");
+        save = null;
+    }
 }
+
+// function saveGame() {
+//     const gameState = {
+//         x: player.x,
+//         y: player.y,
+//         score: score
+//     };
+
+//     localStorage.setItem("vicyburgerSave", JSON.stringify(gameState));
+// }
 
 localStorage.removeItem("jufAnneSave");
+// localStorage.removeItem("vicyburgerSave");
 
 renderShop();
 renderUpgrades();
