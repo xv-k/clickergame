@@ -1,4 +1,4 @@
-let version = 3;
+let version = 4;
 let score = 0;
 let totalPoints = 0;
 let clickPower = 1;
@@ -7,7 +7,7 @@ let multiplier = 1;
 const buildings = {
 
      kok:{
-        name:"👨‍🍳 kok",
+        name:"👨‍🍳 Kok",
         amount:0,
         cps:1,
         cost:15
