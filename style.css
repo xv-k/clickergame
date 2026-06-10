@@ -1,8 +1,8 @@
 body{
     margin:0;
-    background:#ffffff;
+    background:#e7760c;
     font-family:Arial;
-    color:rgba(176, 71, 2, 0.697);
+    color:rgb(255, 255, 255);
     display:flex;
     height:100vh;
 }
