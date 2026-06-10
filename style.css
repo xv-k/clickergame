@@ -1,6 +1,6 @@
 body{
     margin:0;
-    background:#ba7637c3;
+    background:hwb(29 14% 57% / 0.765);
     font-family:Arial;
     color:rgb(255, 255, 255);
     display:flex;
