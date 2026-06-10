@@ -623,11 +623,18 @@ function checkSaveVersion() {
         return;
     }
 
-    if (s && s.version !== version) {
-        console.warn("Detected incompatible save version (" + s.version + "), expected " + version + ". Resetting save and game state.");
-        localStorage.removeItem("vicyburgerSave");
-        resetToDefaults();
-    }
+    // Fetch the server's current version from version.json
+    fetch("version.json")
+        .then(res => res.json())
+        .then(data => {
+            const serverVersion = data.version;
+            if (s && s.version !== serverVersion) {
+                console.warn("Detected incompatible save version (" + s.version + "), expected server version " + serverVersion + ". Resetting save and game state.");
+                localStorage.removeItem("vicyburgerSave");
+                resetToDefaults();
+            }
+        })
+        .catch(err => console.error("Failed to fetch server version:", err));
 }
 
 // Watch for changes to the save (from other tabs or runtime changes)
