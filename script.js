@@ -51,7 +51,29 @@ const buildings = {
         amount:0,
         cps:2500,
         cost:50000
+    },
+
+    sport:{
+        name:"⚽ Sportklassen Brugge ",
+        amount:0,
+        cps:4500,
+        cost:100000
+    },
+
+    vrij:{
+        name:"🆓 Vrijaf",
+        amount:0,
+        cps:6500,
+        cost:500000
+    },
+
+    middelbaar:{
+        name:"📚 Middelbaar",
+        amount:0,
+        cps:7500,
+        cost:1000000
     }
+
 
 };
 
