@@ -560,7 +560,7 @@ function saveGame() {
     localStorage.setItem("savegame", JSON.stringify(gameState));
 }
 
-
+localStorage.removeItem("jufAnneSave");
 
 renderShop();
 renderUpgrades();
