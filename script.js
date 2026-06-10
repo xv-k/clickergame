@@ -401,6 +401,11 @@ setInterval(()=>{
         addAchievement(
             "Beau travail !"
         );
+        
+    if(buildings.middelbaar.amount >= 1)
+        addAchievement(
+            "Laatste examens 6de leerjaar geslaagd"
+        );
 
 
 },1000);
